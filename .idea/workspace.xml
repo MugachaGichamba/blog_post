@@ -2,10 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="73119957-d1a7-49d0-a08b-ab2675df2fb6" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/blog/static/main.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/blog/templates/home.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/blog/templates/layout.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/blog/templates/login.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/blog/templates/layout.html" beforeDir="false" afterPath="$PROJECT_DIR$/blog/templates/layout.html" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -15,15 +14,6 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/.gitignore">
-          <provider selected="true" editor-type-id="text-editor">
-            <state>
-              <caret column="5" selection-start-column="5" selection-end-column="5" />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/run.py">
           <provider selected="true" editor-type-id="text-editor">
@@ -72,11 +62,20 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/blog/routes.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="75">
-              <caret line="5" lean-forward="true" selection-start-line="5" selection-end-line="5" />
+            <state relative-caret-position="90">
+              <caret line="30" selection-start-line="30" selection-end-line="30" />
               <folding>
                 <element signature="e#0#68#0" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/blog/templates/register.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="195">
+              <caret line="69" column="33" lean-forward="true" selection-start-line="69" selection-start-column="33" selection-end-line="69" selection-end-column="33" />
             </state>
           </provider>
         </entry>
@@ -90,20 +89,29 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/blog/templates/layout.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="420">
-              <caret line="28" column="43" selection-start-line="28" selection-start-column="43" selection-end-line="28" selection-end-column="43" />
+            <state relative-caret-position="180">
+              <caret line="45" column="30" selection-start-line="45" selection-start-column="28" selection-end-line="45" selection-end-column="30" />
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/blog/templates/login.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="270">
+              <caret line="48" column="22" selection-start-line="48" selection-start-column="22" selection-end-line="48" selection-end-column="22" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/blog/static/main.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="150">
-              <caret line="67" column="27" lean-forward="true" selection-start-line="67" selection-start-column="27" selection-end-line="67" selection-end-column="27" />
+            <state relative-caret-position="300">
+              <caret line="77" column="18" lean-forward="true" selection-start-line="77" selection-start-column="18" selection-end-line="77" selection-end-column="18" />
             </state>
           </provider>
         </entry>
@@ -115,8 +123,8 @@
       <list>
         <option value="Flask Main" />
         <option value="Python Script" />
-        <option value="HTML File" />
         <option value="CSS File" />
+        <option value="HTML File" />
       </list>
     </option>
   </component>
@@ -132,10 +140,12 @@
         <option value="$PROJECT_DIR$/blog/__init__.py" />
         <option value="$PROJECT_DIR$/blog/models.py" />
         <option value="$PROJECT_DIR$/blog/forms.py" />
-        <option value="$PROJECT_DIR$/blog/routes.py" />
         <option value="$PROJECT_DIR$/blog/templates/home.html" />
-        <option value="$PROJECT_DIR$/blog/templates/layout.html" />
         <option value="$PROJECT_DIR$/blog/static/main.css" />
+        <option value="$PROJECT_DIR$/blog/routes.py" />
+        <option value="$PROJECT_DIR$/blog/templates/register.html" />
+        <option value="$PROJECT_DIR$/blog/templates/login.html" />
+        <option value="$PROJECT_DIR$/blog/templates/layout.html" />
       </list>
     </option>
   </component>
@@ -233,7 +243,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1556571259005</updated>
-      <workItem from="1556571273209" duration="3064000" />
+      <workItem from="1556571273209" duration="3401000" />
     </task>
     <task id="LOCAL-00001" summary="all app dependencies done">
       <created>1556572360662</created>
@@ -270,11 +280,25 @@
       <option name="project" value="LOCAL" />
       <updated>1556573046581</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="home route and template done">
+      <created>1556574370238</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1556574370238</updated>
+    </task>
+    <task id="LOCAL-00007" summary="register route, template and form done">
+      <created>1556574609679</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1556574609679</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="3064000" />
+    <option name="totallyTimeSpent" value="3401000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="25" width="1366" height="743" extended-state="6" />
@@ -312,7 +336,9 @@
     <MESSAGE value="user, post and comments forms done" />
     <MESSAGE value="routes imports done" />
     <MESSAGE value="home route done" />
-    <option name="LAST_COMMIT_MESSAGE" value="home route done" />
+    <MESSAGE value="home route and template done" />
+    <MESSAGE value="register route, template and form done" />
+    <option name="LAST_COMMIT_MESSAGE" value="register route, template and form done" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/Blog$Blog.coverage" NAME="Blog Coverage Results" MODIFIED="1556574117939" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
@@ -379,27 +405,41 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/blog/static/main.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="300">
+          <caret line="77" column="18" lean-forward="true" selection-start-line="77" selection-start-column="18" selection-end-line="77" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/blog/routes.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="75">
-          <caret line="5" lean-forward="true" selection-start-line="5" selection-end-line="5" />
+        <state relative-caret-position="90">
+          <caret line="30" selection-start-line="30" selection-end-line="30" />
           <folding>
             <element signature="e#0#68#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/blog/templates/layout.html">
+    <entry file="file://$PROJECT_DIR$/blog/templates/register.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="420">
-          <caret line="28" column="43" selection-start-line="28" selection-start-column="43" selection-end-line="28" selection-end-column="43" />
+        <state relative-caret-position="195">
+          <caret line="69" column="33" lean-forward="true" selection-start-line="69" selection-start-column="33" selection-end-line="69" selection-end-column="33" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/blog/static/main.css">
+    <entry file="file://$PROJECT_DIR$/blog/templates/login.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="150">
-          <caret line="67" column="27" lean-forward="true" selection-start-line="67" selection-start-column="27" selection-end-line="67" selection-end-column="27" />
+        <state relative-caret-position="270">
+          <caret line="48" column="22" selection-start-line="48" selection-start-column="22" selection-end-line="48" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/blog/templates/layout.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="180">
+          <caret line="45" column="30" selection-start-line="45" selection-start-column="28" selection-end-line="45" selection-end-column="30" />
         </state>
       </provider>
     </entry>
