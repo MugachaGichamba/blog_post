@@ -3,13 +3,15 @@ from blog.forms import RegistrationForm, LoginForm, PostForm, CommentForm
 from blog.models import User, Post, Comment
 from blog import app, db, bcrypt
 from flask_login import login_user, logout_user, current_user, login_required
-
+import requests
 
 @app.route('/')
 @app.route('/home')
 def home():
+    url = "http://quotes.stormconsultancy.co.uk/random.json"
+    quotes = requests.get(url).json()
     posts = Post.query.all()
-    return render_template('home.html', posts=posts, title="Home")
+    return render_template('home.html', posts=posts, quotes=quotes,  title="Home")
 
 
 @app.route('/register', methods=['GET', 'POST'])

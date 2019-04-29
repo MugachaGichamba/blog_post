@@ -17,3 +17,18 @@
         </article>
     {% endfor %}
 {% endblock content %}
+{% block quotes %}
+
+    <div class="content-section">
+        <h3>Quotes Arena</h3>
+        <p class='text-muted'>Quote of the moment.
+
+        <ul class="list-group">
+            <li class="list-group-item list-group-item-light">{{ quotes.author }}</li>
+            <li class="list-group-item list-group-item-light">{{ quotes.quote }}</li>
+        </ul>
+
+        </p>
+    </div>
+
+{% endblock quotes %}
