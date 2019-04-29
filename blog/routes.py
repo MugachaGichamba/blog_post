@@ -77,3 +77,9 @@ def new_comment(post_id):
         flash('Your comment has been added', 'success')
         return redirect(url_for('home'))
     return render_template('new_comment.html', title="New Comment", form=form, comments=comments)
+
+
+@app.route('/logout')
+def logout():
+    logout_user()
+    return redirect(url_for('home'))
