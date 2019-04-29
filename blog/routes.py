@@ -61,3 +61,19 @@ def new_post():
         flash('Your post has been created', 'success')
         return redirect(url_for('home'))
     return render_template('new_post.html', title="New Post", form=form)
+
+
+@app.route('/comment/<int:post_id>', methods=['GET', 'POST'])
+@login_required
+def new_comment(post_id):
+    comments = Comment.query.filter_by(post_id=post_id)
+    form = CommentForm()
+    if form.validate_on_submit():
+
+        comment = Comment(comment=form.comment.data, post_id=post_id)
+
+        db.session.add(comment)
+        db.session.commit()
+        flash('Your comment has been added', 'success')
+        return redirect(url_for('home'))
+    return render_template('new_comment.html', title="New Comment", form=form, comments=comments)
