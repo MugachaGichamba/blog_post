@@ -34,9 +34,8 @@ class LoginForm(FlaskForm):
 
 
 class PostForm(FlaskForm):
-    category = StringField('category', validators=[DataRequired()])
-    pitch = TextAreaField('pitch', validators=[DataRequired()])
-    submit = SubmitField('Pitch')
+    post = TextAreaField('post', validators=[DataRequired()])
+    submit = SubmitField('post')
 
 
 class CommentForm(FlaskForm):

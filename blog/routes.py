@@ -4,6 +4,7 @@ from blog.models import User, Post, Comment
 from blog import app, db, bcrypt
 from flask_login import login_user, logout_user, current_user, login_required
 
+
 @app.route('/')
 @app.route('/home')
 def home():
@@ -45,3 +46,18 @@ def login():
             flash("Wrong login credentials", 'danger')
 
     return render_template('login.html', title="Login", form=form)
+
+
+@app.route('/post/new', methods=['GET', 'POST'])
+@login_required
+def new_post():
+    form = PostForm()
+    if form.validate_on_submit():
+        post = Post(post=form.post.data,
+                    author=current_user)
+
+        db.session.add(post)
+        db.session.commit()
+        flash('Your post has been created', 'success')
+        return redirect(url_for('home'))
+    return render_template('new_post.html', title="New Post", form=form)
