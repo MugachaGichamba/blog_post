@@ -8,11 +8,12 @@
                 <div class="article-metadata">
                     <a class="mr-2" href="#">@{{ post.author.username }}</a>
                     <small class="text-muted">{{ post.date_posted.strftime('%Y-%m-%d') }}</small>
-                    <p class="article-content">{{ post.post }}
+                    <p class="article-content">{{ post.post }} </p>
+
                         <a href="{{ url_for('comments', post_id=post.id) }}">View Comments</a>
+                        <a href="{{ url_for('update_post', post_id=post.id) }}" class="btn btn-secondary">Update Post</a>
                 </div>
             </div>
-
         </article>
     {% endfor %}
 {% endblock content %}

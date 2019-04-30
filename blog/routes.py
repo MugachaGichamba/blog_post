@@ -1,4 +1,4 @@
-from flask import render_template, url_for, flash, redirect, request
+from flask import render_template, url_for, flash, redirect, request, abort
 from blog.forms import RegistrationForm, LoginForm, PostForm, CommentForm
 from blog.models import User, Post, Comment
 from blog import app, db, bcrypt
@@ -108,3 +108,24 @@ def delete_comment(comment_id):
     db.session.commit()
     flash("comment has been deleted!", "success")
     return redirect(url_for('profile'))
+
+
+@app.route('/post/<int:post_id>/update/', methods=['POST', 'GET'])
+@login_required
+def update_post(post_id):
+    post = Post.query.get_or_404(post_id)
+    print(post.author)
+    print(current_user)
+    if post.author != current_user:
+        abort(403)
+    form = PostForm()
+
+    if form.validate_on_submit():
+        post.post = form.post.data
+        db.session.commit()
+        flash("Your post has been updated!", "success")
+        return redirect(url_for('profile'))
+    elif request.method == "GET":
+
+        form.post.data = post.post
+    return render_template('new_post.html', title="Update Post", form=form)
