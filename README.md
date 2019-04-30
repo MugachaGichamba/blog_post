@@ -3,12 +3,12 @@ Flask application to create, view, update and delete posts as well as view rando
 ## Authors
 Mugacha Gichamba
 ## Description
-As a user I will be able to:
+####As a user I will be able to:
 1. view the blog posts on the site.
 2. comment on blog posts.
 3. view the most recent posts.
 4. see random quotes on the site.
-As a writer i will be able to:
+####As a writer i will be able to:
 1. to sign in to the blog.
 2. to create a blog from the application.
 3. delete comments that I find insulting or degrading.
