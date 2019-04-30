@@ -66,7 +66,6 @@ def new_post():
 
 
 @app.route('/comment/<int:post_id>', methods=['GET', 'POST'])
-@login_required
 def new_comment(post_id):
     comments = Comment.query.filter_by(post_id=post_id)
     form = CommentForm()
@@ -85,3 +84,9 @@ def new_comment(post_id):
 def logout():
     logout_user()
     return redirect(url_for('home'))
+
+@app.route('/profile')
+@login_required
+def profile():
+    posts = Post.query.filter_by(user_id=current_user.id).all()
+    return render_template('profile.html', title="profile", posts=posts)
