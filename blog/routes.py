@@ -5,13 +5,14 @@ from blog import app, db, bcrypt
 from flask_login import login_user, logout_user, current_user, login_required
 import requests
 
+
 @app.route('/')
 @app.route('/home')
 def home():
     url = "http://quotes.stormconsultancy.co.uk/random.json"
     quotes = requests.get(url).json()
     posts = Post.query.all()
-    return render_template('home.html', posts=posts, quotes=quotes,  title="Home")
+    return render_template('home.html', posts=posts, quotes=quotes, title="Home")
 
 
 @app.route('/register', methods=['GET', 'POST'])
@@ -70,7 +71,6 @@ def new_comment(post_id):
     comments = Comment.query.filter_by(post_id=post_id)
     form = CommentForm()
     if form.validate_on_submit():
-
         comment = Comment(comment=form.comment.data, post_id=post_id)
 
         db.session.add(comment)
@@ -85,6 +85,7 @@ def logout():
     logout_user()
     return redirect(url_for('home'))
 
+
 @app.route('/profile')
 @login_required
 def profile():
@@ -96,4 +97,14 @@ def profile():
 @login_required
 def comments(post_id):
     comments = Comment.query.filter_by(post_id=post_id)
-    return render_template('comments.html', title="New Comment", comments=comments)
+    return render_template('comments.html', title="Comments", comments=comments)
+
+
+@app.route('/comments/<int:comment_id>/delete/', methods=['POST'])
+@login_required
+def delete_comment(comment_id):
+    comment = Comment.query.get_or_404(comment_id)
+    db.session.delete(comment)
+    db.session.commit()
+    flash("comment has been deleted!", "success")
+    return redirect(url_for('profile'))
