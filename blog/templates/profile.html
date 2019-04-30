@@ -8,7 +8,8 @@
                 <div class="article-metadata">
                     <a class="mr-2" href="#">@{{ post.author.username }}</a>
                     <small class="text-muted">{{ post.date_posted.strftime('%Y-%m-%d') }}</small>
-                    <p class="article-content">{{ post.post }}</p>
+                    <p class="article-content">{{ post.post }}
+                        <a href="{{ url_for('comments', post_id=post.id) }}">View Comments</a>
                 </div>
             </div>
 

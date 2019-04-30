@@ -90,3 +90,10 @@ def logout():
 def profile():
     posts = Post.query.filter_by(user_id=current_user.id).all()
     return render_template('profile.html', title="profile", posts=posts)
+
+
+@app.route('/comments/<int:post_id>', methods=['GET', 'POST'])
+@login_required
+def comments(post_id):
+    comments = Comment.query.filter_by(post_id=post_id)
+    return render_template('comments.html', title="New Comment", comments=comments)
